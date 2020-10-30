@@ -6,37 +6,42 @@
  * form WordPress.org.
  * Plugin URI: https://wpessential.org/home
  * Author: WPEssential
- * Version: 1.0.0
+ * Version: 1.0.0.00001
  * Author URI: https://wpessential.org/
  * Text Domain: wpessential-icons
- * Requires PHP: 7.3
- * Requires at least: 5.0
- * Tested up to: 5.3
+ * Requires PHP: 7.4
+ * Requires at least: 5.5.0
+ * Tested up to: 5.5
  * License: GPLv2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Domain Path: /languages/
  */
-//https://wpessential.org/wpe-plugins/wpessential-icons
+
+require_once plugin_dir_path( __FILE__ ) . 'constants.php';
+require_once WPE_P_ICONS_DIR . 'inc/Loader.php';
+
+add_action( 'plugins_loaded', function ()
+{
+	if ( ! did_action( 'wpessential_loaded' ) ) {
+		require_once WPE_P_ICONS_DIR . 'inc/Libraries/RequiredNotifire.php';
+		\WPEssential\Plugins\Icons\Libraries\RequiredNotifire::make( __( 'Thanks for', 'wpessential-blog-post' ) )
+															 ->plugin_check( 'wpessential' )
+															 ->desc( __( 'Choosing the Wpessential product. The installed plugin has required the WPEssential base plugin.', 'wpessential-blog-post' ) )
+															 ->dismiss( true )
+															 ->icon( WPE_P_ICONS_URL . 'assets/images/wpessential-logo.jpg' );
+
+	}
+}, 1000 );
 
 /**
- * Plugin Version
+ * Fire on 'wpessential_loaded'
  *
- * @since  1.0.0
+ * @since  1.0.0.00001
  */
-define( 'WPE_IC_VR', '1.0.0' );
-
-/**
- * Fire on 'plugin_loaded'
- *
- * @since  1.0.0
- */
-function wpe_ic_plugin_loaded_action() {
-	$file_location = plugin_dir_path( __FILE__ ) . 'functions.php';
-	require_once "{$file_location}";
-	$file_location = apply_filters( 'WPE_ic_directory', 'class-wpe-icons-init.php' );
-	require_once "{$file_location}";
-	new \WPEssential\WPE_Icons_Init();
+function wpe_icons_plugin_loaded_action ()
+{
+	\WPEssential\Plugins\Icons\Loader::constructor();
 }
 
-add_action( 'plugins_loaded', 'wpe_ic_plugin_loaded_action' );
+add_action( 'wpessential_loaded', 'wpe_icons_plugin_loaded_action' );
 
