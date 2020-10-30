@@ -2,10 +2,10 @@
 Contributors: wpessential
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ashadab59@gmail.com&lc=GB&item_name=Donate%20For%20TCI%20Ultimate%20Element%20Themes%20Plugin&currency_code=USD&no_note=0&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest
 Tags: elementor, addons, fonts-icons,
-Requires PHP: 7.3
-Requires at least: 5.0
-Tested up to: 5.3
-Stable tag: 1.0.0
+Requires PHP: 7.4
+Requires at least: 5.5.0
+Tested up to: 5.5
+Stable tag: 1.0.0.00001
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,6 +40,11 @@ Automatic updates should work smoothly, but we still recommend you back up your 
 - Icons View
 
 == Changelog ==
+
+= 31/10/2020 1.0.0.00001 =
+Fix frontend rendring error
+Add [WPEssential](https://wordpress.org/plugins/wpessential) base plugin dependency
+
 = 1.0.0 =
 * Initial release.
 
