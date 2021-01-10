@@ -28,22 +28,22 @@ final class RegisterAssets
 		return wp_parse_args( [
 			'elementor-icons'           => [
 				'link' => WPE_P_ICONS_URL . "/assets/css/elementor-icons{$minify}css",
-				'dep'  => [ '' ],
+				'dep'  => false,
 				'ver'  => self::ver_check(),
 			],
 			'wpessential-icons-captian' => [
 				'link' => WPE_P_ICONS_URL . "/assets/css/wpe.captian.icon{$minify}css",
-				'dep'  => [ '' ],
+				'dep'  => false,
 				'ver'  => self::ver_check(),
 			],
 			'wpessential-icons-ion'     => [
 				'link' => WPE_P_ICONS_URL . "/assets/css/wpe.ion.icons{$minify}css",
-				'dep'  => [ '' ],
+				'dep'  => false,
 				'ver'  => self::ver_check(),
 			],
 			'wpessential-icons-typ'     => [
 				'link' => WPE_P_ICONS_URL . "/assets/css/wpe.typ.icons{$minify}css",
-				'dep'  => [ '' ],
+				'dep'  => false,
 				'ver'  => self::ver_check(),
 			],
 		], $list );
