@@ -26,10 +26,31 @@ final class RegisterAssets
 	{
 		$minify = self::$minify;
 		return wp_parse_args( [
-			'elementor-icons'           => WPE_P_ICONS_URL . "/assets/css/elementor-icons{$minify}css",
-			'wpessential-icons-captian' => WPE_P_ICONS_URL . "/assets/css/wpe.captian.icon{$minify}css",
-			'wpessential-icons-ion'     => WPE_P_ICONS_URL . "/assets/css/wpe.ion.icons{$minify}css",
-			'wpessential-icons-typ'     => WPE_P_ICONS_URL . "/assets/css/wpe.typ.icons{$minify}css",
+			'elementor-icons'           => [
+				'link' => WPE_P_ICONS_URL . "/assets/css/elementor-icons{$minify}css",
+				'dep'  => [ '' ],
+				'ver'  => self::ver_check(),
+			],
+			'wpessential-icons-captian' => [
+				'link' => WPE_P_ICONS_URL . "/assets/css/wpe.captian.icon{$minify}css",
+				'dep'  => [ '' ],
+				'ver'  => self::ver_check(),
+			],
+			'wpessential-icons-ion'     => [
+				'link' => WPE_P_ICONS_URL . "/assets/css/wpe.ion.icons{$minify}css",
+				'dep'  => [ '' ],
+				'ver'  => self::ver_check(),
+			],
+			'wpessential-icons-typ'     => [
+				'link' => WPE_P_ICONS_URL . "/assets/css/wpe.typ.icons{$minify}css",
+				'dep'  => [ '' ],
+				'ver'  => self::ver_check(),
+			],
 		], $list );
+	}
+
+	public static function ver_check ( $ver = WPE_P_ICONS_VERSION )
+	{
+		return \WPEssential\Plugins\Utility\RegisterAssets::ver_check( $ver );
 	}
 }
