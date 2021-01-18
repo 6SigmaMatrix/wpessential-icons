@@ -41,6 +41,9 @@ Automatic updates should work smoothly, but we still recommend you back up your 
 
 == Changelog ==
 
+= 18/01/2021 1.0.0.00002 =
+- Improve structure
+
 = 31/10/2020 1.0.0.00001 =
 Fix frontend rendring error
 Add [WPEssential](https://wordpress.org/plugins/wpessential) base plugin dependency
