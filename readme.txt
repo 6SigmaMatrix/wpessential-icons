@@ -5,7 +5,7 @@ Tags: elementor, addons, fonts-icons,
 Requires PHP: 7.4
 Requires at least: 5.5.0
 Tested up to: 5.5
-Stable tag: 1.0.0.00001
+Stable tag: 1.0.0.00002
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
