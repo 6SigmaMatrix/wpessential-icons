@@ -59,7 +59,7 @@ final class Elementor
 				'prefix'    => '',
 				'labelIcon' => 'eicon-elementor-square',
 				'ver'       => '1.0',
-				'fetchJson' => apply_filters( 'WPE_ic_http_url', 'assets/css/json/elementor.icons.min.json' ),
+				'fetchJson' => WPE_P_ICONS_URL . 'assets/css/json/elementor.icons.min.json',
 				'native'    => true,
 			],
 		];

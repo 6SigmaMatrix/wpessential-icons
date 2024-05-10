@@ -2,9 +2,8 @@
 
 namespace WPEssential\Plugins\Icons;
 
+use WPEssential\Plugins\Icons\Assets\AssetsInit;
 use WPEssential\Plugins\Icons\Utility\BuildersInit;
-use WPEssential\Plugins\Icons\Utility\Enqueue;
-use WPEssential\Plugins\Icons\Utility\RegisterAssets;
 
 final class Loader
 {
@@ -34,14 +33,12 @@ final class Loader
 
 	public static function load_files ()
 	{
-		require_once WPE_P_ICONS_DIR . 'inc/functions.php';
 		require_once WPE_P_ICONS_DIR . 'inc/Libraries/ClassLoader.php';
 	}
 
 	public static function start ()
 	{
-		RegisterAssets::constructor();
-		Enqueue::constructor();
+		AssetsInit::constructor();
 	}
 
 	public static function init ()

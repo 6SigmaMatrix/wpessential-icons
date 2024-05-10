@@ -1,6 +1,6 @@
 <?php
 
-namespace WPEssential\Plugins\Icons\Utility;
+namespace WPEssential\Plugins\Icons\Assets;
 
 final class Enqueue
 {
